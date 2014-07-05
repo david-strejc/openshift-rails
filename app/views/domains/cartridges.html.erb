@@ -1,0 +1,13 @@
+<h1><%= t(:cartridge_list)%> </h1>
+    <div>
+        <ul class="list-unstyled">
+            <% @cartridge_data.each do |cartridge| %>
+                <li> 
+                    <%= cartridge["name"] %> 
+                </li>
+            <% end %>
+        </ul>
+    </div>
+    <div>
+        <%= link_to t(:create_domain), {:controller => "domains", :action => "new"}, class: "btn btn-default" %>
+    </div>
