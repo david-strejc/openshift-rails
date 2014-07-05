@@ -4,10 +4,12 @@
             <% @domains_data.each do |domain| %>
                 <li> 
                     <%= link_to(domain["app_url"].gsub(/http:\/\/|\//, ''),domain["app_url"]) %> 
-                    <ul>
+                    <ul class="list-unstyled">
+                        <!--
                         <li>
                         <%= domain["connection_url"] %>
                         </li>
+                        -->
                     </ul>
                 </li>
             <% end %>

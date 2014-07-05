@@ -1,10 +1,11 @@
 en:
   hello: "Hello world"
   sidebar: "Sidebar"
-  domain_list: "Domain list"
+  domain_list: "Domains"
   domain_new: "Create domain"
   domain_delete: "Delete domain"
   domain_name: "Domain name"
+  cartridge_list: "Cartridges"
   username: "Password"
   password: "User"
   submit: "Submit"

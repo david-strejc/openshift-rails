@@ -10,6 +10,7 @@ class DomainsController < ApplicationController
     I18n.default_locale = :en
 
     OpenSSL::SSL::VERIFY_PEER = OpenSSL::SSL::VERIFY_NONE
+
     
     def index
         os_url = 'https://10.10.0.121'
@@ -26,9 +27,17 @@ class DomainsController < ApplicationController
     end
 
     def update
-        #@domain = params[:domain][:name]
         @domain = params[:domain][:name]
         #@domain = 'hudruj'
+    end
+
+    def cartridges
+        os_url = 'https://10.10.0.121'
+        json_data = open("#{os_url}/broker/rest/cartridges",
+                                 :http_basic_authentication=>['demo', 'changeme']).read
+
+        @result = JSON.parse(json_data)
+        @cartridge_data = @result["data"]
     end
 
 end
