@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.4'
+gem 'i18n'
+gem 'simple_form'
 gem 'mysql2'
 gem 'sqlite3'
 gem 'json'
@@ -12,3 +14,6 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'spring',        group: :development
+gem "therubyracer"
+gem "less-rails"
+gem "twitter-bootstrap-rails"

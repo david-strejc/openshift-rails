@@ -1,0 +1,7 @@
+<h1><%= t(:create_domain) %></h1>
+<div>
+    <%= simple_form_for @domain do |f| %>
+    <%= f.input :name %>
+    <%= f.button :submit %>
+  <% end %>
+</div>
