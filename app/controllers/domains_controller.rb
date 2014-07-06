@@ -28,16 +28,16 @@ class DomainsController < ApplicationController
         @domain = Domain.new
     end
 
-    def update
+    def update 
         @domain = Domain.new
         @domain.name = params[:domain][:name]
         @domain.description = params[:domain][:description]
 
         respond_to do |format|
           if @domain.save
-            format.html { redirect_to @domain, notice: 'User was successfully created.' }
+            #format.html { redirect_to @domain, notice: 'User was successfully created.' }
             format.js   {}
-            format.json { render json: @domain, status: :created, location: @domain }
+            #format.json { render json: @domain, status: :created, location: @domain }
           else
             format.html { render action: "new" }
             format.json { render json: @domain.errors, status: :unprocessable_entity }
