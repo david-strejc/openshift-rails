@@ -19,6 +19,8 @@ class DomainsController < ApplicationController
 
         @result = JSON.parse(json_data)
 
+        @domains = Domain.all
+
         @domains_data = @result["data"]
     end
    
@@ -27,8 +29,25 @@ class DomainsController < ApplicationController
     end
 
     def update
-        @domain = params[:domain][:name]
-        #@domain = 'hudruj'
+        @domain = Domain.new
+        @domain.name = params[:domain][:name]
+        @domain.description = params[:domain][:description]
+
+        respond_to do |format|
+          if @domain.save
+            format.html { redirect_to @domain, notice: 'User was successfully created.' }
+            format.js   {}
+            format.json { render json: @domain, status: :created, location: @domain }
+          else
+            format.html { render action: "new" }
+            format.json { render json: @domain.errors, status: :unprocessable_entity }
+          end
+        end      
+
+    end
+
+    def show
+
     end
 
     def cartridges

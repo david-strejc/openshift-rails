@@ -3,7 +3,7 @@ class CreateDomains < ActiveRecord::Migration
     create_table :domains do |t|
       t.string :name
       t.text :description
-      t.integer :gear
+      t.integer :cartridge
 
       t.timestamps
     end

@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20140705213528) do
   create_table "domains", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "gear"
+    t.integer  "cartridge"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

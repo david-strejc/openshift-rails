@@ -1,24 +1,25 @@
 <h1><%= t(:domain_list)%> </h1>
+
+    <ul>
+    </ul>
     <div>
-        <ul class="list-unstyled">
+        <div class="list-group">
             <% @domains_data.each do |domain| %>
-                <li> 
-                    <%= link_to(domain["app_url"].gsub(/http:\/\/|\//, ''),domain["app_url"]) %> 
-                    <ul class="list-unstyled">
-                        <!--
-                        <li>
-                        <%= domain["connection_url"] %>
-                        </li>
-                        -->
-                    </ul>
-                </li>
+            <div class="list-group-item">
+                <h2><%= link_to(domain["aliases"][0]["id"],"http://"+domain["aliases"][0]["id"]) %></h4>
+                <h4><%= link_to(domain["app_url"].gsub(/http:\/\/|\//, ''),domain["app_url"]) %></h4>
+                <p><%= domain["framework"] %></p>
+                <p><%= domain["git_url"] %></p>
+            </div>
             <% end %>
-        </ul>
+        </div>
     </div>
     <div>
         <%= link_to t(:create_domain), {:controller => "domains", :action => "new"}, class: "btn btn-default" %>
     </div>
 
-    <!--
-        <%= JSON.pretty_generate(@domains_data) %>
-    -->
+<div class="debug" style="margin-top: 100px;">
+<code>
+<%= JSON.pretty_generate(@domains_data) %>
+</code>
+</div>

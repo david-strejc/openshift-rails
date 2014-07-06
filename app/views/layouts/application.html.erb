@@ -36,52 +36,61 @@
 
     <%= javascript_include_tag "application" %>
   </head>
-  <body>
+  <body role="document">
 
-    <div class="navbar navbar-fluid-top">
-      <div class="navbar-inner">
-        <div class="container-fluid">
-          <a class="btn btn-navbar" data-target=".nav-collapse" data-toggle="collapse">
+    <!-- Fixed navbar -->
+    <div class="navbar navbar-default navbar-fluid-top" role="navigation">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </a>
-          <a class="brand" href="#">Openshift</a>
-          <div class="container-fluid nav-collapse">
-            <ul class="nav">
-                <li><span class="glyphicon glyphicon-search"></span><%= link_to t(:domain_list), :controller => "domains", :action => "index" %></li>
-                <li><span class="glyphicon glyphicon-search"></span><%= link_to t(:cartridge_list), :controller => "domains", :action => "cartridges" %></li>
-                <li><span class="glyphicon glyphicon-search"></span><%= link_to t(:domain_new), :controller => "domains", :action => "new" %></li>
-                <li><span class="glyphicon glyphicon-search"></span><%= link_to t(:domain_delete), :controller => "domains", :action => "update" %></li>
-            </ul>
-          </div><!--/.nav-collapse -->
+          </button>
+          <a class="navbar-brand" href="/">Openshift</a>
         </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><%= link_to t(:domain_list), :controller => "domains", :action => "index" %></li>
+            <li><%= link_to t(:cartridge_list), :controller => "domains", :action => "cartridges" %></li>
+            <li><%= link_to t(:domain_new), :controller => "domains", :action => "new" %></li>
+            <li><%= link_to t(:domain_delete), :controller => "domains", :action => "update" %></li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown">User account<span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Details</a></li>
+                <li><a href="#">Update</a></li>
+                <li><a href="#">Logout</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
       </div>
     </div>
 
-    <div class="container-fluid">
-      <div class="row-fluid">
-        <div class="span3">
-          <div class="well sidebar-nav">
-            <ul class="nav nav-list">
-                <li class="nav-header"><%= t(:sidebar) %></li>
-              <li><%= link_to "Link1", "/path1"  %></li>
-              <li><%= link_to "Link2", "/path2"  %></li>
-              <li><%= link_to "Link3", "/path3"  %></li>
-            </ul>
-          </div><!--/.well -->
-        </div><!--/span-->
-        <div class="span9">
-          <%= bootstrap_flash %>
-          <%= yield %>
-        </div>
-      </div><!--/row-->
+    <!--
+    <nav>
+        <ul class="nav nav-pills nav-stacked span2">
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    -->
 
-      <footer>
-        <p>&copy; Etnetera a.s. 2014</p>
-      </footer>
+    <div class="container theme-showcase" role="main">
 
-    </div> <!-- /container -->
+      <!-- Main jumbotron for a primary marketing message or call to action -->
+      <div class="jumbotron">
+        <p><%= yield %> </p>
+      </div>
+
 
   </body>
 </html>
+

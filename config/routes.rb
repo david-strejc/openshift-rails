@@ -6,6 +6,7 @@ Rails.application.routes.draw do
       collection do
           post 'update'
           post 'new'
+          post 'create'
           get 'cartridges'
       end
   end
