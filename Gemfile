@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'rails', '4.1.4'
+gem 'capistrano',  '~> 3.1'
+gem 'capistrano-rails', '~> 1.1'
 gem 'i18n'
 gem 'simple_form'
 gem 'mysql2'
@@ -17,3 +19,5 @@ gem 'spring',        group: :development
 gem "therubyracer"
 gem "less-rails"
 gem "twitter-bootstrap-rails"
+gem "activeresource"
+gem "rest-open-uri"

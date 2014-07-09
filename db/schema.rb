@@ -16,7 +16,8 @@ ActiveRecord::Schema.define(version: 20140705213528) do
   create_table "domains", force: true do |t|
     t.string   "name"
     t.text     "description"
-    t.integer  "cartridge"
+    t.text     "cartridge"
+    t.text     "initial_git_url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

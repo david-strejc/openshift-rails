@@ -1,1 +1,2 @@
-$("<%= escape_javascript(render @domain) %>").appendTo("#result");
+//$("<div><%= escape_javascript(render @domain) %></div>").appendTo("#result");
+$("<div><%= @resp.body %></div>").appendTo("#result");

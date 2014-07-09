@@ -6,7 +6,9 @@
         <div class="list-group">
             <% @domains_data.each do |domain| %>
             <div class="list-group-item">
+                <% if false %>
                 <h2><%= link_to(domain["aliases"][0]["id"],"http://"+domain["aliases"][0]["id"]) %></h4>
+                <% end %>
                 <h4><%= link_to(domain["app_url"].gsub(/http:\/\/|\//, ''),domain["app_url"]) %></h4>
                 <p><%= domain["framework"] %></p>
                 <p><%= domain["git_url"] %></p>

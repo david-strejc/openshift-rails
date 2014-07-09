@@ -3,7 +3,8 @@ class CreateDomains < ActiveRecord::Migration
     create_table :domains do |t|
       t.string :name
       t.text :description
-      t.integer :cartridge
+      t.text :cartridge
+      t.text :initial_git_url
 
       t.timestamps
     end
